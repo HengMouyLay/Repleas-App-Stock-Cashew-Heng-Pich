@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="km">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ទាញយកប្រព័ន្ធគ្រប់គ្រងស្តុកគ្រាប់ស្វាយចន្ទី - Cashew Stock Management System</title>
-  <meta name="description" content="ទាញយក និងដំឡើងប្រព័ន្ធគ្រប់គ្រងស្តុកគ្រាប់ស្វាយចន្ទី ជំនាន់ចុងក្រោយ v1.0.0.1 ងាយស្រួលដំឡើង ជាមួយប្រព័ន្ធ Auto-Update ស្វ័យប្រវត្តិ">
+  <meta name="description" content="ទាញយក និងដំឡើងប្រព័ន្ធគ្រប់គ្រងស្តុកគ្រាប់ស្វាយចន្ទី ជំនាន់ចុងក្រោយ v1.0.0.23 ងាយស្រួលដំឡើង ជាមួយប្រព័ន្ធ Auto-Update ស្វ័យប្រវត្តិ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -427,6 +427,8 @@
     .alert-content h5 {
       font-size: 0.95rem;
       color: #fbbf24;
+      margin-bottom: 4px;
+    }
     .browser-warning-box {
       max-width: 760px;
       margin: 28px auto 0;
@@ -476,6 +478,190 @@
       color: #34d399;
       text-align: center;
       font-weight: 600;
+    }
+
+    /* Release History & Version Log Table */
+    .release-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin: 48px auto;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 23, 42, 0.65);
+      margin-top: 12px;
+    }
+    .version-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+      min-width: 720px;
+    }
+    .version-table th {
+      background: rgba(30, 41, 59, 0.85);
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .version-table td {
+      padding: 18px 20px;
+      vertical-align: middle;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .version-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .version-table tbody tr {
+      transition: background 0.2s ease;
+    }
+    .version-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .version-table tbody tr.row-latest {
+      background: rgba(16, 185, 129, 0.06);
+    }
+    .ver-badge-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .ver-number {
+      font-family: 'Inter', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+    .status-tag.live {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+    .status-tag.archived {
+      background: rgba(148, 163, 184, 0.12);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulseLive 2s infinite;
+    }
+    @keyframes pulseLive {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+    .release-date {
+      color: #f1f5f9;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .release-time {
+      color: #64748b;
+      font-size: 0.78rem;
+      margin-top: 3px;
+    }
+    .notes-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .notes-list li {
+      margin-bottom: 4px;
+    }
+    .notes-list li:last-child {
+      margin-bottom: 0;
+    }
+    .table-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn-action-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+    }
+    .btn-action-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.45);
+    }
+    .btn-action-secondary {
+      background: rgba(30, 41, 59, 0.85);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .btn-action-secondary:hover {
+      background: rgba(51, 65, 85, 0.85);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+    .btn-action svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+    .table-meta-bar {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(15, 23, 42, 0.45);
+      border-radius: 10px;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     /* Footer */
@@ -541,6 +727,9 @@
           <span class="dot-pulse"></span>
           Version 1.0.0.23 (Live)
         </span>
+        <a href="#version-history" class="badge" style="text-decoration:none; cursor:pointer;" title="ចុចដើម្បីមើលតារាងប្រវត្តិកំណែប្រែ">
+          📋 ប្រវត្តិកំណែប្រែ
+        </a>
         <span class="badge">Windows 10 / 11</span>
       </div>
     </div>
@@ -556,7 +745,7 @@
       </div>
       <h2>ទាញយក និងដំឡើងកម្មវិធីដោយផ្ទាល់<br>ប្រើប្រាស់បានភ្លាមៗគ្រប់កុំព្យូទ័រ</h2>
       <p>
-        ប្រព័ន្ធគ្រប់គ្រងស្តុកគ្រាប់ស្វាយចន្ទីស្រស់-គ្រាប់ខូច ការថ្លឹងរថយន្ត ច្រកបាវ គណនីគណនេយ្យ និងតុល្យភាពសាច់ប្រាក់។ ភ្ជាប់ប្រព័ន្ធពិនិត្យកំណែប្រែស្វ័យប្រវត្តិតាម GitHub។
+        ប្រព័ន្ធគ្រប់គ្រងស្តុកគ្រាប់ស្វាយចន្ទីស្រស់-គ្រាប់ខូច ការថ្លឹងរថយន្ត ច្រកបាវ គណនីគណនេយ្យ និងតុល្យភាពសាច់ប្រាក់។ ភ្ជាប់ប្រព័ន្ធពិនិត្យកំណែប្រែស្វ័យប្រវត្តិតាម GitHub Cloud Storage។
       </p>
 
       <!-- Action Buttons -->
@@ -620,7 +809,7 @@
           </div>
         </div>
         <div class="bwb-note">
-          ⚡ ក្រោយទាញយកបាន គ្រាន់តែចុចបើក <code>StockCashew_Setup_v1.0.0.23.exe</code> វានឹង Auto-Install រួចបើកកម្មវិធីជូនភ្លាមៗដោយស្វ័យប្រវត្តិតែម្ដង!
+          ⚡ ក្រោយទាញយកបាន គ្រាន់តែចុចបើក <code>StockCashew_Setup.exe</code> វានឹង Auto-Install រួចបើកកម្មវិធីជូនភ្លាមៗដោយស្វ័យប្រវត្តិតែម្ដង!
         </div>
       </div>
     </section>
@@ -638,7 +827,7 @@
           <div class="step-num">១</div>
           <h4>ទាញយកកម្មវិធីដំឡើង (Download)</h4>
           <p>
-            ចុចលើប៊ូតុងពណ៌ខៀវ <strong>«ទាញយកកម្មវិធីដំឡើង (Download Installer .exe)»</strong> ខាងលើ។ រង់ចាំការទាញយក <code>StockCashew_Setup_v1.0.0.23.exe</code> រហូតដល់ចប់ (~12.4 MB)។
+            ចុចលើប៊ូតុងពណ៌ខៀវ <strong>«ទាញយកកម្មវិធីដំឡើង (Download Installer .exe)»</strong> ខាងលើ។ រង់ចាំការទាញយក <code>StockCashew_Setup.exe</code> រហូតដល់ចប់ (~12.4 MB)។
           </p>
         </div>
 
@@ -673,7 +862,7 @@
       <div class="alert-content">
         <h5>💡 ងាយស្រួលបំផុតដោយមិនបាច់ Extract File៖</h5>
         <p>
-          កម្មវិធីដំឡើង <strong>StockCashew_Setup_v1.0.0.23.exe</strong> នេះបានរៀបចំឯកសារចាំបាច់ទាំងអស់រួចស្រេច។ អ្នកមិនបាច់ចំណាយពេល Extract Zip ឬចុច file .bat ឡើយ គ្រាន់តែចុច <strong>Install</strong> គឺអាចប្រើប្រាស់បានភ្លាម!
+          កម្មវិធីដំឡើង <strong>StockCashew_Setup.exe</strong> នេះបានរៀបចំឯកសារចាំបាច់ទាំងអស់រួចស្រេច។ អ្នកមិនបាច់ចំណាយពេល Extract Zip ឬចុច file .bat ឡើយ គ្រាន់តែចុច <strong>Install</strong> គឺអាចប្រើប្រាស់បានភ្លាម!
         </p>
       </div>
     </div>
@@ -707,7 +896,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
           </div>
           <h4>Auto-Update ពីចម្ងាយ</h4>
-          <p>ប្រព័ន្ធឆែករកកំណែប្រែថ្មីដោយស្វ័យប្រវត្តិតាម GitHub រាល់ពេលបើកដំណើរការកម្មវិធី ដោយមិនបាច់ដំឡើងឡើងវិញដោយដៃ។</p>
+          <p>ប្រព័ន្ធឆែករកកំណែប្រែថ្មីដោយស្វ័យប្រវត្តិតាម GitHub Cloud Storage រាល់ពេលបើកដំណើរការកម្មវិធី ដោយមិនបាច់ដំឡើងឡើងវិញដោយដៃ។</p>
         </div>
 
         <div class="feature-card">
@@ -717,6 +906,131 @@
           <h4>បោះពុម្ពវិក្កយបត្រ និងរបាយការណ៍</h4>
           <p>គាំទ្រការបោះពុម្ពវិក្កយបត្រ A4, A5, របាយការណ៍សង្ខេបប្រចាំថ្ងៃ ប្រចាំខែ និងការ Export ទិន្នន័យជា Excel។</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Release Version Log Table Section -->
+    <section class="release-section" id="version-history">
+      <div class="section-title">
+        <h3>📋 កំណត់ត្រាកំណែប្រែ និងប្រវត្តិទាញយក (Release Version Log)</h3>
+        <p>តារាងកត់ត្រារាល់កំណែប្រែផ្លូវការ កាលបរិច្ឆេទចេញផ្សាយ ការកែលម្អប្រព័ន្ធ និងតំណទាញយកកញ្ចប់ដំឡើង</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="version-table">
+          <thead>
+            <tr>
+              <th style="width: 18%;">ជំនាន់ (Version)</th>
+              <th style="width: 16%;">កាលបរិច្ឆេទ (Date)</th>
+              <th style="width: 44%;">កំណត់ហេតុបច្ចុប្បន្នភាព (Changelog / Notes)</th>
+              <th style="width: 22%; text-align: right;">ទាញយក (Download)</th>
+            </tr>
+          </thead>
+          <tbody id="versionTableBody">
+            <!-- Row: v1.0.0.23 (Live) -->
+            <tr class="row-latest">
+              <td>
+                <div class="ver-badge-wrap">
+                  <span class="ver-number">v1.0.0.23</span>
+                  <span class="status-tag live">
+                    <span class="live-dot"></span> ចុងក្រោយ (Live)
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div class="release-date">20 តុលា 2026</div>
+                <div class="release-time">10:30 AM</div>
+              </td>
+              <td>
+                <ul class="notes-list">
+                  <li>ធ្វើបច្ចុប្បន្នភាព និងពន្លឿនដំណើរការប្រព័ន្ធទិន្នន័យ (Performance & Query Speed Optimization)</li>
+                  <li>កែលម្អស្ថិរភាព និងមុខងារប្រព័ន្ធទូទៅ (General System Stability & UI Refinements)</li>
+                </ul>
+              </td>
+              <td>
+                <div class="table-actions">
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_Setup_v1.0.0.23.exe" class="btn-action btn-action-primary" download="StockCashew_Setup_v1.0.0.23.exe" title="ទាញយក Installer .exe">
+                    <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    Setup .exe (~12.4 MB)
+                  </a>
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_v1.0.0.23.zip" class="btn-action btn-action-secondary" download="StockCashew_v1.0.0.23.zip" title="ទាញយក Portable .zip">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10H6v-2h8v2zm4-4H6v-2h12v2z"/></svg>
+                    Zip
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row: v1.0.0.22 -->
+            <tr>
+              <td>
+                <div class="ver-badge-wrap">
+                  <span class="ver-number">v1.0.0.22</span>
+                  <span class="status-tag archived">កំណែមុន (Archived)</span>
+                </div>
+              </td>
+              <td>
+                <div class="release-date">19 តុលា 2026</div>
+                <div class="release-time">05:45 PM</div>
+              </td>
+              <td>
+                <ul class="notes-list">
+                  <li>ចាក់សោសុវត្ថិភាពតម្រូវឱ្យ Update ជាកំហិតមុននឹងចូលប្រើប្រព័ន្ធ (Mandatory Auto-Update Lock)</li>
+                  <li>ការពារការប្រើប្រាស់កំណែចាស់ និងពង្រឹងផ្ទាំង Login មិនឱ្យរំលងការ Update</li>
+                </ul>
+              </td>
+              <td>
+                <div class="table-actions">
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_Setup_v1.0.0.22.exe" class="btn-action btn-action-secondary" download="StockCashew_Setup_v1.0.0.22.exe" title="ទាញយក Installer .exe">
+                    <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    Setup .exe (~12.4 MB)
+                  </a>
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_v1.0.0.22.zip" class="btn-action btn-action-secondary" download="StockCashew_v1.0.0.22.zip" title="ទាញយក Portable .zip">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10H6v-2h8v2zm4-4H6v-2h12v2z"/></svg>
+                    Zip
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row: v1.0.0.21 -->
+            <tr>
+              <td>
+                <div class="ver-badge-wrap">
+                  <span class="ver-number">v1.0.0.21</span>
+                  <span class="status-tag archived">កំណែមុន (Archived)</span>
+                </div>
+              </td>
+              <td>
+                <div class="release-date">19 តុលា 2026</div>
+                <div class="release-time">04:15 PM</div>
+              </td>
+              <td>
+                <ul class="notes-list">
+                  <li>បន្ថែមប៊ូតុងគ្រប់គ្រងកំណែប្រែ (Manage Release Version) ការពារដោយលេខសម្ងាត់នៅលើផ្ទាំង Login</li>
+                  <li>បង្កើតប្រព័ន្ធ Auto-Packaging និងរក្សាទុកកំណែប្រែ ៣ ជំនាន់ចុងក្រោយលើ GitHub</li>
+                </ul>
+              </td>
+              <td>
+                <div class="table-actions">
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_Setup_v1.0.0.21.exe" class="btn-action btn-action-secondary" download="StockCashew_Setup_v1.0.0.21.exe" title="ទាញយក Installer .exe">
+                    <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    Setup .exe (~12.4 MB)
+                  </a>
+                  <a href="https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_v1.0.0.21.zip" class="btn-action btn-action-secondary" download="StockCashew_v1.0.0.21.zip" title="ទាញយក Portable .zip">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10H6v-2h8v2zm4-4H6v-2h12v2z"/></svg>
+                    Zip
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-meta-bar">
+        <span>📦 ប្រព័ន្ធគ្រប់គ្រងរក្សាទុកតែ <strong>៣ កំណែចុងក្រោយ</strong> បំផុតលើ GitHub Cloud Storage ដើម្បីសន្សំទំហំ និងធានាស្ថិរភាព។</span>
+        <span>ស្ថានភាពម៉ាស៊ីនបម្រើ៖ <strong style="color: #34d399;">● Online (GitHub Cloud)</strong></span>
       </div>
     </section>
 
@@ -765,6 +1079,27 @@
                                            .replace(/Version\s+[0-9.]+/g, "Version " + data.version);
               }
             });
+
+            // Synchronize the latest table row
+            const liveRow = document.querySelector("#versionTableBody tr.row-latest");
+            if (liveRow) {
+              const liveVerEl = liveRow.querySelector(".ver-number");
+              if (liveVerEl) liveVerEl.textContent = "v" + data.version;
+
+              const liveExeBtn = liveRow.querySelector("a.btn-action-primary");
+              if (liveExeBtn && data.download_url) {
+                liveExeBtn.href = data.download_url;
+                const fileName = data.download_url.split('/').pop().split('?')[0];
+                liveExeBtn.setAttribute("download", fileName);
+              }
+
+              const liveZipBtn = liveRow.querySelector("a.btn-action-secondary");
+              if (liveZipBtn) {
+                const zipUrl = "https://raw.githubusercontent.com/HengMouyLay/Repleas-App-Stock-Cashew-Heng-Pich/main/StockCashew_v" + data.version + ".zip";
+                liveZipBtn.href = zipUrl;
+                liveZipBtn.setAttribute("download", "StockCashew_v" + data.version + ".zip");
+              }
+            }
           }
         })
         .catch(function(err) {
